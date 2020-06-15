@@ -1,16 +1,17 @@
 import React from 'react';
-import WelcomeScreen from '../main/welcome-screen';
+import WelcomeScreen from './../welcome-screen/welcome-screen';
 import PropTypes from 'prop-types';
 
-const App = ({Settings}) => {
-  const {GAME_TIME, ERROR_COUNTING} = Settings;
+const App = ({settings}) => {
+
+  const {GAME_TIME, ERROR_COUNTING} = settings;
   return <WelcomeScreen
     GAME_TIME={GAME_TIME}
     ERROR_COUNTING={ERROR_COUNTING}/>;
 };
 
 App.propTypes = {
-  Settings: PropTypes.shape({
+  settings: PropTypes.shape({
     GAME_TIME: PropTypes.number.isRequired,
     ERROR_COUNTING: PropTypes.number.isRequired,
   })
