@@ -2,11 +2,11 @@
 import React from 'react';
 import WelcomeScreen from '../main/welcome-screen';
 
-const App = ({settings}) => {
-  const {gameTime, errorCount} = settings;
+const App = ({Settings}) => {
+  const {GAME_TIME, ERROR_COUNTING} = Settings;
   return <WelcomeScreen
-    gameTime={gameTime}
-    errorCount={errorCount}/>;
+    GAME_TIME={GAME_TIME}
+    ERROR_COUNTING={ERROR_COUNTING}/>;
 };
 
 export default App;
