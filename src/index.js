@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './components/app';
+import App from './components/app/app';
 
 const settings = {
   gameTime: 5,

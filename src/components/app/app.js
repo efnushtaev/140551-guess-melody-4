@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import WelcomeScreen from './welcome-screen';
+import WelcomeScreen from '../main/welcome-screen';
 
 const App = ({settings}) => {
   const {gameTime, errorCount} = settings;
