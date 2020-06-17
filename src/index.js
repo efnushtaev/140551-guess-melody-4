@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import App from './components/app';
+import App from './components/app/app';
 
-const settings = {
-  gameTime: 5,
-  errorCount: 3
+const Settings = {
+  GAME_TIME: 5,
+  ERROR_COUNTING: 3
 };
 
 ReactDOM.render(
-    <App settings={settings}/>,
+    <App settings={Settings}/>,
     document.getElementById(`root`)
 );
