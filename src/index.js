@@ -1,11 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './components/app/app';
-
-const Settings = {
-  GAME_TIME: 5,
-  ERROR_COUNTING: 3,
-};
+import questions from './mocks/questions.js';
+import {Settings} from './constants';
 
 const onWelcomeButtonClick = () => {
   // eslint-disable-next-line no-alert
@@ -14,7 +11,9 @@ const onWelcomeButtonClick = () => {
 
 ReactDOM.render(
     <App
+      questions={questions}
       settings={Settings}
-      onWelcomeButtonClick={onWelcomeButtonClick}/>,
+      onWelcomeButtonClick={onWelcomeButtonClick}
+    />,
     document.getElementById(`root`)
 );
