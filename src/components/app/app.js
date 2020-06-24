@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
 import {GameType} from './../../constants';
 import WelcomeScreen from './../welcome-screen/welcome-screen';
 import QuestionArtist from './../question-artist/question-artist';
@@ -70,13 +70,13 @@ class App extends React.PureComponent {
           <Route exact path='/question-artist'
             render={() => <QuestionArtist
               question={question}
-              onAnswer={this.setState((prevState) => ({screen: prevState.screen + 1}))}
+              onAnswer={() => {}}
             />}
           />
           <Route exact path='/question-genre'
             render={() => <QuestionGenre
               question={question}
-              onAnswer={this.setState((prevState) => ({screen: prevState.screen + 1}))}
+              onAnswer={() => {}}
             />}
           />
         </Switch>
@@ -92,6 +92,7 @@ App.propTypes = {
   }),
   onWelcomeButtonClick: PropTypes.func.isRequired,
   questions: PropTypes.arrayOf(PropTypes.object),
+  screen: PropTypes.number
 };
 
 export default App;

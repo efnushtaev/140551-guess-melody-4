@@ -29,16 +29,15 @@ class QuestionGenre extends React.PureComponent {
   }
 
   render() {
-    const {question, onAnswer} = this.props;
+    const {question: {answers}, onAnswer} = this.props;
     const {userAnswers} = this.state;
-    const answers = question.answers;
 
     return (
       <section className="game game--genre">
         {this.drawHeaderSection()}
         <section className="game__screen">
           <h2 className="game__title">Выберите инди-рок треки</h2>
-          <form className="game__tracks">
+          <form className="game__tracks" onSubmit={() => onAnswer(this.state.userAnswers)}>
             {answers.map((answer, i) => {
               return <div key={`${answer.genre} ${i}`} className="track">
                 <button className="track__button track__button--play" type="button"></button>
@@ -60,10 +59,7 @@ class QuestionGenre extends React.PureComponent {
               </div>;
             })}
 
-            <button className="game__submit button" type="submit" onClick={(e)=>{
-              e.preventDefault();
-              onAnswer(this.state.userAnswers);
-            }}>Ответить</button>
+            <button className="game__submit button" type="submit">Ответить</button>
           </form>
         </section>
       </section>
@@ -76,9 +72,11 @@ QuestionGenre.propTypes = {
   onAnswer: PropTypes.func,
   question: PropTypes.shape({
     type: PropTypes.string,
-    artist: PropTypes.string,
-    src: PropTypes.string,
-    answers: PropTypes.array
+    genre: PropTypes.string,
+    answers: PropTypes.arrayOf(PropTypes.shape({
+      genre: PropTypes.string,
+      src: PropTypes.string
+    }))
   })
 };
 

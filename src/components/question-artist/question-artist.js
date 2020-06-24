@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class QuestionArtist extends React.PureComponent {
-
   constructor(props) {
     super(props);
   }
@@ -27,9 +26,7 @@ class QuestionArtist extends React.PureComponent {
   }
 
   render() {
-    const {question, onAnswer} = this.props;
-    const answers = question.answers;
-
+    const {question: {answers, src}, onAnswer} = this.props;
     return (
       <section className="game game--genre">
         {this.drawHeaderSection()}
@@ -39,21 +36,19 @@ class QuestionArtist extends React.PureComponent {
             <div className="track">
               <button className="track__button track__button--play" type="button"></button>
               <div className="track__status">
-                <audio src={question.src}></audio>
+                <audio src={src}></audio>
               </div>
             </div>
           </div>
 
           <form className="game__artist">
             {answers.map((answer, i) => {
-              return <div key={answer.artist + i} className="artist" onClick={(e)=>{
-                e.preventDefault();
-                onAnswer(answer, question);
-              }}>
+              return <div key={`${answer.artist} + i`} className="artist">
                 <input className="artist__input visually-hidden"
-                  type="radio" name="answer" value={answer.artist + i}
-                  id={answer.artist + i} />
-                <label className="artist__name" htmlFor="answer-1">
+                  onChange={() => onAnswer(answer)}
+                  type="radio" name={`answer${i}`} value={answer.artist}
+                  id={`answer${i}`} />
+                <label className="artist__name" htmlFor={`answer${i}`}>
                   <img className="artist__picture" src={answer.picture} alt={answer.artist}/>
                   {answer.artist}
                 </label>
@@ -70,9 +65,12 @@ QuestionArtist.propTypes = {
   onAnswer: PropTypes.func,
   question: PropTypes.shape({
     type: PropTypes.string,
-    artist: PropTypes.string,
+    title: PropTypes.string,
     src: PropTypes.string,
-    answers: PropTypes.array
+    answers: PropTypes.arrayOf(PropTypes.shape({
+      artist: PropTypes.string,
+      picture: PropTypes.string
+    }))
   })
 };
 
