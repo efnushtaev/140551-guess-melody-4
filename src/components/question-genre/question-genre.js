@@ -72,7 +72,7 @@ QuestionGenre.propTypes = {
   onAnswer: PropTypes.func,
   question: PropTypes.shape({
     type: PropTypes.string,
-    genre: PropTypes.string.isRequired,
+    genre: PropTypes.string,
     answers: PropTypes.arrayOf(PropTypes.shape({
       genre: PropTypes.string,
       src: PropTypes.string
