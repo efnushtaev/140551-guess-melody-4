@@ -1,13 +1,10 @@
 /* eslint-disable no-alert */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './app';
 import {describe, expect, it} from '@jest/globals';
-
-const Settings = {
-  GAME_TIME: 3,
-  ERROR_COUNTING: 5
-};
+import {MemoryRouter} from 'react-router-dom';
+import QuestionArtist from '../question-artist/question-artist';
+import QuestionGenre from '../question-genre/question-genre';
 
 const questions = [{
   type: `genre`,
@@ -54,9 +51,17 @@ const questions = [{
 describe(`appTest`, () => {
   it(`renders correctly`, () => {
     const tree = renderer
-      .create(<App
-        questions={questions}
-        settings={Settings}/>)
+      .create(
+          <MemoryRouter>
+            <QuestionArtist
+              question={questions[0]}
+              onAnswer={() => {}}
+            />
+            <QuestionGenre
+              question={questions[1]}
+              onAnswer={() => {}}
+            />
+          </MemoryRouter>)
       .toJSON();
 
     expect(tree).toMatchSnapshot();

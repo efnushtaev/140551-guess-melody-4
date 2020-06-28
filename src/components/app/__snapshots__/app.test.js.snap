@@ -1,57 +1,364 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`appTest renders correctly 1`] = `
-<section
-  className="welcome"
->
-  <div
-    className="welcome__logo"
+Array [
+  <section
+    className="game game--genre"
   >
-    <img
-      alt="Угадай мелодию"
-      height="83"
-      src="img/melody-logo.png"
-      width="186"
-    />
-  </div>
-  <button
-    className="welcome__button"
-    onClick={[Function]}
-  >
-    <span
-      className="visually-hidden"
+    <div
+      className="game__header"
     >
-      Начать игру
-    </span>
-  </button>
-  <h2
-    className="welcome__rules-title"
+      <a
+        className="game__back"
+        href="#"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Сыграть ещё раз
+        </span>
+        <img
+          alt="Угадай мелодию"
+          className="game__logo"
+          src="img/melody-logo-ginger.png"
+        />
+      </a>
+      <svg
+        className="timer"
+        viewBox="0 0 780 780"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          className="timer__line"
+          cx="390"
+          cy="390"
+          r="370"
+        />
+      </svg>
+      <div
+        className="game__mistakes"
+      >
+        <div
+          className="wrong"
+        />
+        <div
+          className="wrong"
+        />
+        <div
+          className="wrong"
+        />
+      </div>
+    </div>
+    <section
+      className="game__screen"
+    >
+      <h2
+        className="game__title"
+      >
+        Кто исполняет эту песню?
+      </h2>
+      <div
+        className="game__track"
+      >
+        <div
+          className="track"
+        >
+          <button
+            className="track__button track__button--play"
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio />
+          </div>
+        </div>
+      </div>
+      <form
+        className="game__artist"
+      >
+        <div
+          className="artist"
+        >
+          <input
+            className="artist__input visually-hidden"
+            id="answer0"
+            name="answer0"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="artist__name"
+            htmlFor="answer0"
+          >
+            <img
+              className="artist__picture"
+            />
+          </label>
+        </div>
+        <div
+          className="artist"
+        >
+          <input
+            className="artist__input visually-hidden"
+            id="answer1"
+            name="answer1"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="artist__name"
+            htmlFor="answer1"
+          >
+            <img
+              className="artist__picture"
+            />
+          </label>
+        </div>
+        <div
+          className="artist"
+        >
+          <input
+            className="artist__input visually-hidden"
+            id="answer2"
+            name="answer2"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="artist__name"
+            htmlFor="answer2"
+          >
+            <img
+              className="artist__picture"
+            />
+          </label>
+        </div>
+        <div
+          className="artist"
+        >
+          <input
+            className="artist__input visually-hidden"
+            id="answer3"
+            name="answer3"
+            onChange={[Function]}
+            type="radio"
+          />
+          <label
+            className="artist__name"
+            htmlFor="answer3"
+          >
+            <img
+              className="artist__picture"
+            />
+          </label>
+        </div>
+      </form>
+    </section>
+  </section>,
+  <section
+    className="game game--genre"
   >
-    Правила игры
-  </h2>
-  <p
-    className="welcome__text"
-  >
-    Правила просты:
-  </p>
-  <ul
-    className="welcome__rules-list"
-  >
-    <li>
-      За 
-      3
-       минут нужно ответить на все вопросы.
-    </li>
-    <li>
-      Можно допустить 
-      5
-       ошибки.
-    </li>
-  </ul>
-  <p
-    className="welcome__text"
-  >
-    Удачи!
-  </p>
-</section>
+    <div
+      className="game__header"
+    >
+      <a
+        className="game__back"
+        href="#"
+      >
+        <span
+          className="visually-hidden"
+        >
+          Сыграть ещё раз
+        </span>
+        <img
+          alt="Угадай мелодию"
+          className="game__logo"
+          src="img/melody-logo-ginger.png"
+        />
+      </a>
+      <svg
+        className="timer"
+        viewBox="0 0 780 780"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          className="timer__line"
+          cx="390"
+          cy="390"
+          r="370"
+        />
+      </svg>
+      <div
+        className="game__mistakes"
+      >
+        <div
+          className="wrong"
+        />
+        <div
+          className="wrong"
+        />
+        <div
+          className="wrong"
+        />
+      </div>
+    </div>
+    <section
+      className="game__screen"
+    >
+      <h2
+        className="game__title"
+      >
+        Выберите инди-рок треки
+      </h2>
+      <form
+        className="game__tracks"
+        onSubmit={[Function]}
+      >
+        <div
+          className="track"
+        >
+          <button
+            className="track__button track__button--play"
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/BWV_543-prelude.ogg"
+            />
+          </div>
+          <div
+            className="game__answer"
+          >
+            <input
+              checked={false}
+              className="game__input visually-hidden"
+              id="answer0"
+              name="answer"
+              onChange={[Function]}
+              type="checkbox"
+              value="answer0"
+            />
+            <label
+              className="game__check"
+              htmlFor="answer0"
+            >
+              Отметить
+            </label>
+          </div>
+        </div>
+        <div
+          className="track"
+        >
+          <button
+            className="track__button track__button--play"
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/BWV_543-prelude.ogg"
+            />
+          </div>
+          <div
+            className="game__answer"
+          >
+            <input
+              checked={true}
+              className="game__input visually-hidden"
+              id="answer1"
+              name="answer"
+              onChange={[Function]}
+              type="checkbox"
+              value="answer1"
+            />
+            <label
+              className="game__check"
+              htmlFor="answer1"
+            >
+              Отметить
+            </label>
+          </div>
+        </div>
+        <div
+          className="track"
+        >
+          <button
+            className="track__button track__button--play"
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/BWV_543-prelude.ogg"
+            />
+          </div>
+          <div
+            className="game__answer"
+          >
+            <input
+              checked={false}
+              className="game__input visually-hidden"
+              id="answer2"
+              name="answer"
+              onChange={[Function]}
+              type="checkbox"
+              value="answer2"
+            />
+            <label
+              className="game__check"
+              htmlFor="answer2"
+            >
+              Отметить
+            </label>
+          </div>
+        </div>
+        <div
+          className="track"
+        >
+          <button
+            className="track__button track__button--play"
+            type="button"
+          />
+          <div
+            className="track__status"
+          >
+            <audio
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/BWV_543-prelude.ogg"
+            />
+          </div>
+          <div
+            className="game__answer"
+          >
+            <input
+              checked={false}
+              className="game__input visually-hidden"
+              id="answer3"
+              name="answer"
+              onChange={[Function]}
+              type="checkbox"
+              value="answer3"
+            />
+            <label
+              className="game__check"
+              htmlFor="answer3"
+            >
+              Отметить
+            </label>
+          </div>
+        </div>
+        <button
+          className="game__submit button"
+          type="submit"
+        >
+          Ответить
+        </button>
+      </form>
+    </section>
+  </section>,
+]
 `;
