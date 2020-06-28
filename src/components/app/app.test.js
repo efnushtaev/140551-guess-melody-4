@@ -57,10 +57,6 @@ describe(`appTest`, () => {
               question={questions[0]}
               onAnswer={() => {}}
             />
-            <QuestionGenre
-              question={questions[1]}
-              onAnswer={() => {}}
-            />
           </MemoryRouter>)
       .toJSON();
 
