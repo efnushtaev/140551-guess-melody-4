@@ -90,7 +90,6 @@ App.propTypes = {
     GAME_TIME: PropTypes.number.isRequired,
     ERROR_COUNTING: PropTypes.number.isRequired,
   }),
-  onWelcomeButtonClick: PropTypes.func.isRequired,
   questions: PropTypes.arrayOf(PropTypes.object),
   screen: PropTypes.number
 };
