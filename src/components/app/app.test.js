@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer';
 import {describe, expect, it} from '@jest/globals';
 import {MemoryRouter} from 'react-router-dom';
 import QuestionArtist from '../question-artist/question-artist';
-import QuestionGenre from '../question-genre/question-genre';
 
 const questions = [{
   type: `genre`,
