@@ -6,6 +6,7 @@ import {GameType} from './../../constants';
 import WelcomeScreen from './../welcome-screen/welcome-screen';
 import QuestionArtist from './../question-artist/question-artist';
 import QuestionGenre from './../question-genre/question-genre';
+import GameScreen from '../game-screen/game-screen';
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -32,25 +33,33 @@ class App extends React.PureComponent {
       switch (question.type) {
         case GameType.GENRE:
           return (
-            <QuestionGenre
-              question={question}
-              onAnswer={(answer) => {
-                console.log(`answer: ${JSON.stringify(answer)}`);
-                console.log(`question: ${JSON.stringify(question)}`);
-                this.setState((prevState) => ({screen: prevState.screen + 1}));
-              }}
-            />
+            <GameScreen
+              gameType={questions.type}
+            >
+              <QuestionGenre
+                question={question}
+                onAnswer={(answer) => {
+                  console.log(`answer: ${JSON.stringify(answer)}`);
+                  console.log(`question: ${JSON.stringify(question)}`);
+                  this.setState((prevState) => ({screen: prevState.screen + 1}));
+                }}
+              />
+            </GameScreen>
           );
         case GameType.ARTIST:
           return (
-            <QuestionArtist
-              question={question}
-              onAnswer={(answer) => {
-                console.log(`answer: ${JSON.stringify(answer)}`);
-                console.log(`question: ${JSON.stringify(question)}`);
-                this.setState((prevState) => ({screen: prevState.screen + 1}));
-              }}
-            />
+            <GameScreen
+              gameType={questions.type}
+            >
+              <QuestionArtist
+                question={question}
+                onAnswer={(answer) => {
+                  console.log(`answer: ${JSON.stringify(answer)}`);
+                  console.log(`question: ${JSON.stringify(question)}`);
+                  this.setState((prevState) => ({screen: prevState.screen + 1}));
+                }}
+              />
+            </GameScreen>
           );
       }
     }
