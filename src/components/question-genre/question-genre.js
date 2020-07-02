@@ -10,7 +10,7 @@ class QuestionGenre extends React.PureComponent {
   }
 
   render() {
-    const {question: {answers}, onAnswer} = this.props;
+    const {question: {answers}, onAnswer, renderPlayer} = this.props;
     const {userAnswers} = this.state;
 
     return (
@@ -19,10 +19,7 @@ class QuestionGenre extends React.PureComponent {
         <form className="game__tracks" onSubmit={() => onAnswer(this.state.userAnswers)}>
           {answers.map((answer, i) => {
             return <div key={`${answer.genre} ${i}`} className="track">
-              <button className="track__button track__button--play" type="button"></button>
-              <div className="track__status">
-                <audio src={answer.src}></audio>
-              </div>
+              {renderPlayer(answer.src, i)}
               <div className="game__answer">
                 <input className="game__input visually-hidden" type="checkbox" name="answer" checked={userAnswers[i]}
                   onChange={(e) => {
@@ -55,7 +52,8 @@ QuestionGenre.propTypes = {
       genre: PropTypes.string,
       src: PropTypes.string
     }))
-  })
+  }),
+  renderPlayer: PropTypes.func.isRequired
 };
 
 export default QuestionGenre;

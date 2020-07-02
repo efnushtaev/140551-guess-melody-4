@@ -7,6 +7,10 @@ import WelcomeScreen from './../welcome-screen/welcome-screen';
 import QuestionArtist from './../question-artist/question-artist';
 import QuestionGenre from './../question-genre/question-genre';
 import GameScreen from '../game-screen/game-screen';
+import withActivePlayer from '../../hocs/with-audio-player';
+
+const QuestionGenreWrapped = withActivePlayer(QuestionGenre);
+const QuestionArtistWrapped = withActivePlayer(QuestionArtist);
 
 class App extends React.PureComponent {
   constructor(props) {
@@ -22,7 +26,6 @@ class App extends React.PureComponent {
     const {questions} = this.props;
     const {screen} = this.state;
     const question = questions[screen];
-
     if (screen === -1 || screen >= questions.length) {
       return <WelcomeScreen
         gameTime={GAME_TIME}
@@ -34,9 +37,9 @@ class App extends React.PureComponent {
         case GameType.GENRE:
           return (
             <GameScreen
-              gameType={questions.type}
+              gameType={GameType.GENRE}
             >
-              <QuestionGenre
+              <QuestionGenreWrapped
                 question={question}
                 onAnswer={(answer) => {
                   console.log(`answer: ${JSON.stringify(answer)}`);
@@ -49,9 +52,9 @@ class App extends React.PureComponent {
         case GameType.ARTIST:
           return (
             <GameScreen
-              gameType={questions.type}
+              gameType={GameType.ARTIST}
             >
-              <QuestionArtist
+              <QuestionArtistWrapped
                 question={question}
                 onAnswer={(answer) => {
                   console.log(`answer: ${JSON.stringify(answer)}`);
@@ -77,13 +80,13 @@ class App extends React.PureComponent {
             render={() => this.drawGameScreen()}
           />
           <Route exact path='/question-artist'
-            render={() => <QuestionArtist
+            render={() => <QuestionArtistWrapped
               question={question}
               onAnswer={() => {}}
             />}
           />
           <Route exact path='/question-genre'
-            render={() => <QuestionGenre
+            render={() => <QuestionGenreWrapped
               question={question}
               onAnswer={() => {}}
             />}

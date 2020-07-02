@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class QuestionArtist extends React.PureComponent {
+class QuestionArtist extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isPlaying: true
+    };
   }
 
   render() {
-    const {question: {answers, src}, onAnswer} = this.props;
+    const {question: {answers, src}, onAnswer, renderPlayer} = this.props;
+
     return (
       <section className="game__screen">
         <h2 className="game__title">Кто исполняет эту песню?</h2>
         <div className="game__track">
           <div className="track">
-            <button className="track__button track__button--play" type="button"></button>
-            <div className="track__status">
-              <audio src={src}></audio>
-            </div>
+            {renderPlayer(src, 0)}
           </div>
         </div>
 
@@ -49,7 +50,8 @@ QuestionArtist.propTypes = {
       artist: PropTypes.string,
       picture: PropTypes.string
     }))
-  })
+  }),
+  renderPlayer: PropTypes.func.isRequired
 };
 
 export default QuestionArtist;
