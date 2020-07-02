@@ -32,15 +32,23 @@ const mock = {
 
 it(`no answers`, () => {
   const onAnswer = jest.fn();
-  const tree = shallow(<QuestionGenre question={mock} onAnswer={onAnswer} />);
+  const tree = shallow(<QuestionGenre
+    question={mock}
+    onAnswer={onAnswer}
+    renderPlayer={()=>{}}
+  />);
   tree.find(`form`).simulate(`submit`, {PreventDefault: () => {}});
 
   expect(onAnswer).toHaveBeenCalledTimes(1);
 });
 
 it(`one answer`, () => {
-  const onAnswer = jest.fn();
-  const tree = shallow(<QuestionGenre question={mock} onAnswer={onAnswer} />);
+  const onAnswer = jest.fn((...args) => [...args]);
+  const tree = shallow(<QuestionGenre
+    question={mock}
+    onAnswer={onAnswer}
+    renderPlayer={()=>{}}
+  />);
   const userAnswers = [false, true, false, false];
 
   tree.find(`form`).simulate(`submit`, {PreventDefault: () => {}});

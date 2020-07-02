@@ -31,7 +31,10 @@ describe(`QuestionArtist`, () => {
   it(`Answer passed via callback should be according to props`, () => {
     const onAnswer = jest.fn();
     const tree = shallow(<QuestionArtist
-      onAnswer={onAnswer} question={mock}/>);
+      onAnswer={onAnswer}
+      question={mock}
+      renderPlayer={()=>{}}
+    />);
 
     const input = tree.find(`input`).at(1);
 

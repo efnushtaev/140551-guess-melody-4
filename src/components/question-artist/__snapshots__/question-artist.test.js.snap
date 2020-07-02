@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`appTest renders correctly 1`] = `
+exports[`QuestionArtist is rendered correctly 1`] = `
 <section
   className="game__screen"
 >
@@ -28,14 +28,18 @@ exports[`appTest renders correctly 1`] = `
         name="answer0"
         onChange={[Function]}
         type="radio"
+        value="John Snow"
       />
       <label
         className="artist__name"
         htmlFor="answer0"
       >
         <img
+          alt="John Snow"
           className="artist__picture"
+          src="https://api.adorable.io/avatars/128/0"
         />
+        John Snow
       </label>
     </div>
     <div
@@ -47,14 +51,18 @@ exports[`appTest renders correctly 1`] = `
         name="answer1"
         onChange={[Function]}
         type="radio"
+        value="Jack Daniels"
       />
       <label
         className="artist__name"
         htmlFor="answer1"
       >
         <img
+          alt="Jack Daniels"
           className="artist__picture"
+          src="https://api.adorable.io/avatars/128/1"
         />
+        Jack Daniels
       </label>
     </div>
     <div
@@ -66,33 +74,18 @@ exports[`appTest renders correctly 1`] = `
         name="answer2"
         onChange={[Function]}
         type="radio"
+        value="Jim Beam"
       />
       <label
         className="artist__name"
         htmlFor="answer2"
       >
         <img
+          alt="Jim Beam"
           className="artist__picture"
+          src="https://api.adorable.io/avatars/128/2"
         />
-      </label>
-    </div>
-    <div
-      className="artist"
-    >
-      <input
-        className="artist__input visually-hidden"
-        id="answer3"
-        name="answer3"
-        onChange={[Function]}
-        type="radio"
-      />
-      <label
-        className="artist__name"
-        htmlFor="answer3"
-      >
-        <img
-          className="artist__picture"
-        />
+        Jim Beam
       </label>
     </div>
   </form>

@@ -55,6 +55,7 @@ describe(`appTest`, () => {
             <QuestionArtist
               question={questions[0]}
               onAnswer={() => {}}
+              renderPlayer={() =>{}}
             />
           </MemoryRouter>)
       .toJSON();
